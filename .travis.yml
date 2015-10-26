@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 2.2.3
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: D+jP/1ongY4SUPu9n27BTvIjuohpbQV3jwKVsVIxut5PBwSigniQTeEdlJnL9SZVOxrprdg+CwuL/gcpbhvkj3FyhTkp/UdWJ1GRbu+fwszMFh/DYYzVAiSciFJ2XKLf1fYR70sgQjriTNgu1X1+guGxMT49qdL/3raMxY+geAmgUeMN7NRDCaWbBVJ/rw8Mf+C9RqZbIPdOzvbFVnUCkLWV56hm89Y0XNIZYN6D4s6MV5MkwAnmWkqDO02WV+BZbTM1kEMqIdWSwqmFhJ/3S1f3X0b06Tz9pN3s+oFCF2vNi4h4IMXY2hyYO1hzwOTIgn72hWRdrwCULxAMegwyDmxCIP+0VF1XlaXq/LAEFrXebUwcGWGgdO4b6eSf5axYrgPSeGhq84GKF8aZ+09scp7kjo75wxSMCxaUrvEy+knupqpQk1d77iLW9DZKmc8faHej4eYw39sqTDrweDkSoObfXXAQF79jsL9fDLImLH+CmCKJT6WXeoMxtgnPUBeUdakWvbTf5LYmomv2JSDI8jqXSYsVDtUqcAwuQpl4L0JsC/NucR74Ys07UeJwxhfxHTJMfoAc0znfk4jbiN73mW3vDNE38A6t2DzhMWrSi3HEzP3IHaWAzTZ1rHA3StJaYc5LdPXHR0t6SlaZVU+GJOBYhoezd3LWZAXRg96FAjw=
+  app: thawing-eyrie-8019
+  on:
+    repo: zokuhara/foodsters
+  run:
+  - "rake db:migrate"
+  - "rake cleanup"
