@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     if @current_user.blank?
-      redirect_to root_path    
+      redirect_to root_path
+    end
   end
 end

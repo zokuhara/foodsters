@@ -46,6 +46,9 @@ group :development do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
 gem "minitest-rails"
 gem "bootstrap-sass"
 gem 'simple_form'
+gem 'yummly'
+gem "figaro"
