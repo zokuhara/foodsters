@@ -1,0 +1,24 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Foodster</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Recipes", recipes_path %></li>
+        <li><a href="#">Your Meal Plan</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Shopping List</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%= @current_user.first_name %><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Account Info", account_info_path(id: @current_user.id) %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Sign Out", sign_out_path, method: :delete %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -7,9 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if @current_user.present? %>
+    <%= render 'layouts/user_present' %>
+  <% else %>
+    <%= render 'layouts/user_not_present' %>
+  <% end %>
+  <% if alert %>
+    <div class="alert alert-danger">
+      <%= alert %>
+    </div>
+  <% end %>
+  <% if notice %>
+    <div class="alert alert-success">
+      <%= notice %>
+    </div>
+  <% end %>
 <div class="container">
   <%= yield %>
-</div>
 
+  <!-- <%= render 'layouts/footer' %> -->
+</div>
 </body>
 </html>

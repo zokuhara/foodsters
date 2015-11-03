@@ -1,0 +1,7 @@
+<h1>Recipes#search</h1>
+
+<% if @recipes.any? %>
+  <%= render "results" %>
+<% else %>
+  <h3>No Results Found</h3>
+<% end %>
