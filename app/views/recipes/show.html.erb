@@ -1,0 +1,24 @@
+<h1>Recipes#show</h1>
+
+<ul>
+  <li>Include flavor attributes</li>
+  <li>button to add to meal plan</li>
+</ul>
+<div class="recipe-details">
+  <h1><%= @recipe.name %></h1>
+  <% @recipe.images.each do |image| %>
+    <%= image_tag image.large_url %>
+  <% end %>
+  <br/>
+  <h4>Total Time: </h4><%= @recipe.total_time %>
+  <br/>
+  <h1 style="color:red"><%= @recipe.description.nil? %></h1>
+  <br/>
+  <dl class="ingredients">
+    <dt>Ingredients</dt>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <dd><%= ingredient %></dd>
+    <% end %>
+  </dl>
+
+</div>

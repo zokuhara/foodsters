@@ -52,3 +52,4 @@ gem "bootstrap-sass"
 gem 'simple_form'
 gem 'yummly'
 gem "figaro"
+gem 'icalendar', '~> 2.3'
