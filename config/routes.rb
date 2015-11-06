@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'events/index'
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'dashboard#index'
 
   get 'dashboard/details' => 'dashboard#show', as: :details
@@ -7,6 +10,9 @@ Rails.application.routes.draw do
   get 'recipes/index' => 'recipes#index', as: :recipes
   get 'recipes/show/:id' => 'recipes#show', as: :recipes_show
   get 'recipes/search' => 'recipes#search', as: :recipe_search
+  get 'recipes/new/:id' => 'recipes#new', as: :add_recipe
+  post 'recipes' => 'recipes#create', as: :recipe
+  #delete
 
   get 'users/new' => 'users#new', as: :sign_up
   post 'users' => 'users#create', as: :users
