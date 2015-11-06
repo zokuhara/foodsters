@@ -1,0 +1,13 @@
+<h1>Thank you for subscribing</h1>
+
+<div class="well">
+  <dl class="">
+    <dt>Email</dt>
+    <dd><%= @current_user.email %></dd>
+    <dt>Order ID</dt>
+    <dd><%= @sale.guid %></dd>
+    <dt>Order Date</dt>
+    <dd><%= @sale.created_at.strftime("%A %B %e %Y") %></dd>
+  </dl>
+</div>
+<%= link_to "Continue to website", recipe_search_path, class: "btn btn-success" %>
