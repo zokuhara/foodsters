@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Payola::Engine => '/payola', as: :payola
 
   root 'dashboard#index'
 
@@ -16,4 +17,6 @@ Rails.application.routes.draw do
   post 'sign_in' => 'sessions#create'
   delete 'sign_out' => 'sessions#delete', as: :sign_out
 
+  resources :subscriptions
+  get 'confirmation/:sale_guid' => 'subscriptions#confirmation', as: :confirmation
 end

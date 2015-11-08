@@ -53,3 +53,5 @@ gem 'simple_form'
 gem 'yummly'
 gem "figaro"
 gem 'icalendar', '~> 2.3'
+gem 'payola-payments'
+gem 'pry'
