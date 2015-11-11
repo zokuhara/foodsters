@@ -1,25 +1,8 @@
 <div class="col-md-8 col-md-offset-2">
-  <h1>Recipes#New</h1>
-  <h1>New Meal</h1>
-  <%= form_tag('/recipes') do %>
-    <div class="form-group">
-      <%= label_tag :summary %>
-      <%= text_field_tag :summary, "#{@recipe.name}", class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= label_tag :description %>
-      <%= text_area_tag :description, "Ingredients:\n #{@recipe.ingredients.join("\n")}\n----------------", class: "form-control", rows: 10 %>
-    </div>
-
-    <div class="form-group">
-      <%= date_select :date, "get", class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= submit_tag "Create Meal", class: "btn btn-success btn-lg" %>
-    </div>
+  <%= simple_form_for @recipe do |f| %>
+    <%= f.input :summary %>
+    <%= f.input :description %>
+    <%= f.input :dtstart, as: :date, order: [:month, :day, :year] %>
+    <%= f.submit "Add Recipe To Calendar", class: "btn btn-success" %>
   <% end %>
-
-  <%= @recipe.id %>
 </div>

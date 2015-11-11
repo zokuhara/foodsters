@@ -1,4 +1,3 @@
-<h1>Recipes#search</h1>
 <div class="search col-md-8 col-md-offset-2">
   <%= form_tag("/recipes/search", method: "get") do %>
     <div class="form-group">
@@ -10,7 +9,7 @@
     </div>
   <% end %>
 </div>
-<% if @recipes.any? %>
+<% if @results.any? %>
   <%= render "results" %>
 <% else %>
   <h3>No Results Found</h3>

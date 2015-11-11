@@ -1,0 +1,14 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  summary: MyString
+  description: MyText
+  dtstart: 2015-11-09
+  ip_class: MyString
+
+two:
+  summary: MyString
+  description: MyText
+  dtstart: 2015-11-09
+  ip_class: MyString

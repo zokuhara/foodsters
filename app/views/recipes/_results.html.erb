@@ -1,21 +1,23 @@
 <div class="row">
-  <% @recipes.each do |recipe| %>
+  <% @results.each do |result| %>
     <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag recipe.thumbnail %>
+      <div class="thumbnail result">
+        <%= image_tag result.thumbnail %>
         <div class="caption">
-          <h3><%= recipe.recipe_name %></h3>
+          <h3><%= result.recipe_name %></h3>
 
-          <% recipe.rating.times do %>
+          <% result.rating.times do %>
             ⭐️
           <% end %>
-          <% (5 - recipe.rating).times do %>
+          <% (5 - result.rating).times do %>
             ☆
           <% end %>
           <br/>
-          <strong>Prep Time:</strong> <%= distance_of_time_in_words recipe.total_time_in_seconds %>
+          <strong>Prep Time:</strong> <%= distance_of_time_in_words result.total_time_in_seconds %>
           <br/>
-          <%= link_to "See more", recipes_show_path(id: recipe.id), class: "btn btn-success" %>
+          <div class="footer">
+            <%= link_to "See more", recipes_show_path(id: result.id), class: "btn btn-success btn-lg" %>
+          </div>
         </div>
       </div>
     </div>

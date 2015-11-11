@@ -1,27 +1,19 @@
-<h1>Recipes#show</h1>
-
-<ul>
-  <li>Include flavor attributes</li>
-  <li>button to add to meal plan</li>
-</ul>
 <div class="recipe-details">
-  <h1><%= @recipe.name %></h1>
-  <% @recipe.images.each do |image| %>
+  <h1><%= @result.name %></h1>
+  <% @result.images.each do |image| %>
     <%= image_tag image.large_url %>
   <% end %>
   <br/>
 
-    <h4>Total Time: </h4><%= @recipe.total_time %>
+    <h4>Total Time: </h4><%= @result.total_time %>
 
   <span>
-    <%= link_to "Add to Meal Plan", add_recipe_path(id: @recipe.id), class: "btn btn-info" %>
+    <%= link_to "Add to Meal Plan", add_recipe_path(id: @result.id), class: "btn btn-info" %>
   </span>
-  <br/>
-  <h1 style="color:red"><%= @recipe.description.nil? %></h1>
   <br/>
   <dl class="ingredients">
     <dt>Ingredients:</dt>
-    <% @recipe.ingredients.each do |ingredient| %>
+    <% @result.ingredients.each do |ingredient| %>
       <dd><%= ingredient %></dd>
     <% end %>
   </dl>
