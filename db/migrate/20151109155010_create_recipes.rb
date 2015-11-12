@@ -4,7 +4,7 @@ class CreateRecipes < ActiveRecord::Migration
       t.string :summary
       t.text :description
       t.date :dtstart
-      t.string :ip_class
+      t.string :ip_class, default: "PUBLIC"
 
       t.timestamps null: false
     end

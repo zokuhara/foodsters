@@ -43,15 +43,7 @@ class RecipesController < ApplicationController
     cal_event.description = @recipe.description
     @calendar.add_event cal_event
     @calendar.publish
-    respond_to do |format|
-      format.ics do
-        response.headers['Content-Disposition'] = 'attachment; filename="' + filename + '.ics"'
-
-        render :text => @calendar.to_ical
-      end
-    end
-    # headers['Content-Type'] = "text/calendar; charset=UTF-8"
-    # render :text => (@calendar.to_ical + ".ics")
+    send_data @calendar.to_ical, :filename => "recipe.ics"
   end
 
 end
