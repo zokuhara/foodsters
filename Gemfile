@@ -54,3 +54,5 @@ gem 'yummly'
 gem "figaro"
 gem 'rails_admin'
 gem 'icalendar', '~> 2.3'
+gem 'payola-payments'
+gem 'pry'
