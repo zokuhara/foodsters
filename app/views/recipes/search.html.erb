@@ -1,7 +1,9 @@
 <%= render "search_bar" %>
-
+<br/>
 <% if @results.any? %>
   <%= render "results" %>
 <% else %>
-  <h3>No Results Found</h3>
+  <div class="no-results col-md-8 col-md-offset-2">
+    <%= render "no_results" %>
+  </div>
 <% end %>
