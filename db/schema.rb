@@ -11,16 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20151106183729) do
-=======
 ActiveRecord::Schema.define(version: 20151109155010) do
->>>>>>> calendar
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
+
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "summary"
+    t.text     "description"
+    t.date     "dtstart"
+    t.string   "ip_class",    default: "PUBLIC"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
   create_table "payola_affiliates", force: :cascade do |t|
     t.string   "code"
     t.string   "email"
@@ -126,7 +133,8 @@ ActiveRecord::Schema.define(version: 20151109155010) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-=======
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string   "summary"
     t.text     "description"
@@ -134,7 +142,6 @@ ActiveRecord::Schema.define(version: 20151109155010) do
     t.string   "ip_class",    default: "PUBLIC"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
->>>>>>> calendar
   end
 
   create_table "users", force: :cascade do |t|
