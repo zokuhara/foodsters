@@ -4,7 +4,7 @@
     <%= image_tag image.large_url %>
   <% end %>
   <br/>
-  <span class="time">Total Time: </span><%= @recipe.total_time %>
+  <span class="time">Total Time: </span><%= @result.total_time %>
   <span>
     <%= link_to "Add to Meal Plan", add_recipe_path(id: @result.id), class: "btn btn-info" %>
   </span>
