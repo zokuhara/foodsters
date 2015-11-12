@@ -1,14 +1,17 @@
 <div class="recipe-details">
-  <h1><%= @recipe.name %></h1>
-  <% @recipe.images.each do |image| %>
+  <h1><%= @result.name %></h1>
+  <% @result.images.each do |image| %>
     <%= image_tag image.large_url %>
   <% end %>
   <br/>
   <span class="time">Total Time: </span><%= @recipe.total_time %>
+  <span>
+    <%= link_to "Add to Meal Plan", add_recipe_path(id: @result.id), class: "btn btn-info" %>
+  </span>
   <br/>
   <dl class="ingredients">
-    <dt>Ingredients</dt>
-    <% @recipe.ingredients.each do |ingredient| %>
+    <dt>Ingredients:</dt>
+    <% @result.ingredients.each do |ingredient| %>
       <dd><%= ingredient %></dd>
     <% end %>
   </dl>
